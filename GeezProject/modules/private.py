@@ -28,12 +28,12 @@ logging.basicConfig(level=logging.INFO)
 )
 async def start_(client: Client, message: Message):
     await message.reply_text(
-        f"""<b>Yahoo {message.from_user.first_name} -san✨\n
-Saya [Makima](https://telegra.ph/file/e876e047815541a468d3b.jpg), Bot yang dapat Memutar Music di Voice Chat Group Anda Dengan Mudah
-❃ Gunakan Perintah » /help « untuk Mengetahui Fitur dari Saya
+        f"""<b>Hello {message.from_user.first_name}\n
+I am [Makima](https://telegra.ph/file/e876e047815541a468d3b.jpg), I can play music in your Voice Chat Group easily
+❃ Use Command » /help « to learn more how to use me.
 ❃ Managed By ❤ : {OWNER}
 
-Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
+Want to add me to your group? Add me to your group
 </b>""",
 
 # Edit Yang Seharusnya Lu Edit Aja:D
@@ -43,7 +43,7 @@ Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+                        "➕ Add me to your group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
                 [
                     InlineKeyboardButton(
                         "💬 Channel Updates", url=f"https://t.me/{UPDATES_CHANNEL}"), 
@@ -88,7 +88,7 @@ def map(pos):
     elif(pos==len(tr.HELP_MSG)-1):
         url = f"https://t.me/{SUPPORT_GROUP}"
         button = [
-            [InlineKeyboardButton("➕ Tambahkan saya ke Grup Anda ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
+            [InlineKeyboardButton("➕ Add me to your group ➕", url=f"https://t.me/{BOT_USERNAME}?startgroup=true")],
             [InlineKeyboardButton(text = '💬 Channel Updates', url=f"https://t.me/{UPDATES_CHANNEL}"),
              InlineKeyboardButton(text = '🔰 Group Support', url=f"https://t.me/{SUPPORT_GROUP}")],
             [InlineKeyboardButton(text = '«', callback_data = f"help+{pos-1}")]
@@ -115,10 +115,10 @@ async def start(client: Client, message: Message):
             [   
                 [    
                     InlineKeyboardButton(
-                        "✅ Ya", switch_inline_query_current_chat=""
+                        "✅ Yes", switch_inline_query_current_chat=""
                     ),
                     InlineKeyboardButton(
-                        "❌ Tidak ", callback_data="close"
+                        "❌ No ", callback_data="close"
                     )
                 ]
             ]
@@ -138,7 +138,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Cara Menggunakan BOT", url="https://t.me/nekousers_bot"
+                        "How to use Bot", url="https://t.me/nekousers_bot"
                     )
                 ]
             ]
