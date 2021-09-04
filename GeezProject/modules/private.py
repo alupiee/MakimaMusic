@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Yahoo {message.from_user.first_name} -san✨\n
-Saya [Siesta Music Bot](https://telegra.ph/file/7b8ddecdb62dce63a1150.jpg), Bot yang dapat Memutar Music di Voice Chat Group Anda Dengan Mudah
+Saya [Makima](https://telegra.ph/file/e876e047815541a468d3b.jpg), Bot yang dapat Memutar Music di Voice Chat Group Anda Dengan Mudah
 ❃ Gunakan Perintah » /help « untuk Mengetahui Fitur dari Saya
 ❃ Managed By ❤ : {OWNER}
 
@@ -138,7 +138,7 @@ async def help(client: Client, message: Message):
             [
                 [
                     InlineKeyboardButton(
-                        "Cara Menggunakan BOT", url="https://t.me/siestamusic_xbot"
+                        "Cara Menggunakan BOT", url="https://t.me/nekousers_bot"
                     )
                 ]
             ]
