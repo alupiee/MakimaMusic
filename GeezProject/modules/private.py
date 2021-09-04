@@ -33,7 +33,6 @@ Saya [Siesta Music Bot](https://telegra.ph/file/7b8ddecdb62dce63a1150.jpg), Bot 
 ❃ Gunakan Perintah » /help « untuk Mengetahui Fitur dari Saya
 ❃ Managed By ❤ : {OWNER}
 
-
 Ingin Menambahkan Saya ke Grup Anda? Tambahkan Saya Ke Group Anda!
 </b>""",
 
