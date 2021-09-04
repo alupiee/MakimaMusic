@@ -20,47 +20,56 @@ class Messages():
       HELP_MSG = [
         ".",
 f"""
-**Hey 👋 Selamat datang kembali di {PROJECT_NAME}
+**Hey 👋 Welcome back to {PROJECT_NAME}
 
-✣️ {PROJECT_NAME} dapat Memutar Lagu di Voice Chat Group Dengan cara yang Mudah.
+⚪️ {PROJECT_NAME} can play music in your group's voice chat as well as channel voice chats
 
-✣️ Assistant Music » @{ASSISTANT_NAME}\n\nKlik Next untuk instruksi**
-
+⚪️ Assistant name >> @{ASSISTANT_NAME}\n\nClick next for instructions**
 """,
 
 f"""
-**Pengaturan**
+**Setting up**
 
-1. Jadikan bot sebagai admin
-2. Mulai obrolan suara / VCG
-3. Ketik `/userbotjoin` dan coba /play <nama lagu>
-× Jika Assistant Bot bergabung selamat menikmati musik, 
-× Jika Assistant Bot tidak bergabung Silahkan Tambahkan @{ASSISTANT_NAME} ke grup Anda dan coba lagi
+1) Make bot admin (Group and in channel if use cplay)
+2) Start a voice chat
+3) Try /play [song name] for the first time by an admin
+*) If userbot joined enjoy music, If not add @{ASSISTANT_NAME} to your group and retry
 
 
-**» Perintah Untuk dalam grup Member Juga Bisa :**
+**Commands**
 
- × /playlist : Untuk Menampilkan daftar putar Lagu sekarang
- × /current : Untuk Menunjukkan  Lagu sekarang yang sedang diputar
- × /song <judul lagu> : Untuk Mendownload lagu di YouTube 
- × /video <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /vsong <judul lagu> : Untuk Mendownload Video di YouTube dengan detail
- × /deezer <judul lagu> : Untuk Mendownload lagu dari deezer 
- × /saavn <judul lagu> : Untuk Mendownload lagu dari website saavn
- × /search <judul lagu> : Untuk Mencari Video di YouTube dengan detail
+**=>> Song Playing 🎧**
 
-**» Perintah Hanya Untuk Admin :**
+- /play: Play song using youtube music
+- /play [yt url] : Play the given yt url
+- /play [reply yo audio]: Play replied audio
+- /dplay: Play song via deezer
+- /splay: Play song via jio saavn
 
-× /play <judul lagu> : Untuk Memutar lagu yang Anda minta melalui youtube
-× /play <link yt> : Untuk Memutar lagu yang Anda minta melalui link youtube
-× /play <reply ke audio> : Untuk Memutar lagu yang Anda minta melalui file audio
-× /dplay : Untuk Memutar lagu yang Anda minta melalui deezer
-× /splay : Untuk Memutar lagu yang Anda minta melalui jio saavn
-× /skip : Untuk Menskip pemutaran lagu ke Lagu berikutnya
-× /pause : Untuk Menjeda pemutaran Lagu
-× /resume : Untuk Melanjutkan pemutaran Lagu yang di pause
-× /end : Untuk Memberhentikan pemutaran Lagu
-× /userbotjoin - Untuk Mengundang asisten ke obrolan Anda
-× /admincache - Untuk MemRefresh admin list
+**=>> Playback ⏯**
+
+- /player: Open Settings menu of player
+- /skip: Skips the current track
+- /pause: Pause track
+- /resume: Resumes the paused track
+- /end: Stops media playback
+- /current: Shows the current Playing track
+- /playlist: Shows playlist
+""",
+
+⚪️ For linked group admins only:
+
+- /cplay [song name] - play song you requested
+- /cdplay [song name] - play song you requested via deezer
+- /csplay [song name] - play song you requested via jio saavn
+- /cplaylist - Show now playing list
+- /cccurrent - Show now playing
+- /cplayer - open music player settings panel
+- /cpause - pause song play
+- /cresume - resume song play
+- /cskip - play next song
+- /cend - stop music play
+- /userbotjoinchannel - invite assistant to your chat
+- /admincache: Updates admin info of your group. Try if bot isn't recognize admin
 """
       ]
