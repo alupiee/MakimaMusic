@@ -691,8 +691,8 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Antrian Ke `{position}`\n" \
-                    + f"🎧 **Request Dari:** {message.from_user.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Queue to `{position}`\n" \
+                    + f"🎧 **Requested by:** {message.from_user.mention}",
                    reply_markup=keyboard)
        
     else:
@@ -711,8 +711,8 @@ async def play(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Sedang Memutar\n" \
-                    + f"🎧 **Request Dari:** {message.from_user.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Now Playing\n" \
+                    + f"🎧 **Requested by:** {message.from_user.mention}",
                    reply_markup=keyboard)
 
     os.remove("final.png")
@@ -724,7 +724,7 @@ async def ytplay(_, message: Message):
     global que
     if message.chat.id in DISABLED_GROUPS:
         return
-    lel = await message.reply("🔄 **Sedang Memproses Lagu**")
+    lel = await message.reply("🔄 **Processing**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -778,7 +778,7 @@ async def ytplay(_, message: Message):
             f"<i>{user.first_name} terkena banned dari Grup ini, Minta admin untuk mengirim perintah `/play` untuk pertama kalinya atau tambahkan @{ASSISTANT_NAME} secara manual</i>"
         )
         return
-    await lel.edit("🔎 **Sedang Mencari Lagu**")
+    await lel.edit("🔎 **Finding**")
     user_id = message.from_user.id
     user_name = message.from_user.first_name
      
@@ -787,7 +787,7 @@ async def ytplay(_, message: Message):
     for i in message.command[1:]:
         query += " " + str(i)
     print(query)
-    await lel.edit("🎵 **Sedang Memproses Lagu**")
+    await lel.edit("🎵 **Processing**")
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
@@ -833,8 +833,8 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Antrian Ke `{position}`\n" \
-                    + f"🎧 **Request Dari:** {message.from_user.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Queue to `{position}`\n" \
+                    + f"🎧 **Requested by:** {message.from_user.mention}",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -855,8 +855,8 @@ async def ytplay(_, message: Message):
             return
         await message.reply_photo(
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Sedang Memutar\n" \
-                    + f"🎧 **Request Dari:** {message.from_user.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Now Playing\n" \
+                    + f"🎧 **Requested by:** {message.from_user.mention}",
                    reply_markup=keyboard,)
         os.remove("final.png")
         return await lel.delete()
@@ -867,7 +867,7 @@ async def deezer(client: Client, message_: Message):
     if message_.chat.id in DISABLED_GROUPS:
         return
     global que
-    lel = await message_.reply("🔄 **Sedang Memproses Lagu**")
+    lel = await message_.reply("🔄 **Processing**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
@@ -909,15 +909,15 @@ async def deezer(client: Client, message_: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"<b>⛑ Flood Wait Error ⛑\n{user.first_name} tidak dapat bergabung dengan grup Anda karena banyaknya permintaan bergabung untuk userbot! Pastikan pengguna tidak dibanned dalam grup."
-                        f"\n\nAtau tambahkan @{ASSISTANT_NAME} secara manual ke Grup Anda dan coba lagi</b>",
+                     f"<b>⛑ Flood Wait Error ⛑\n{user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
+                        "\n\nOr manually add assistant to your Group and try again</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            f"<i>{user.first_name} terkena banned dari Grup ini, Minta admin untuk mengirim perintah `/play` untuk pertama kalinya atau tambahkan @{ASSISTANT_NAME} secara manual</i>"
+            f"<i>{user.first_name} Userbot not in this chat, Ask admin to send /play command for first time or add @{ASSISTANT_NAME} manually</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -926,7 +926,7 @@ async def deezer(client: Client, message_: Message):
     queryy = text[1]
     query = queryy
     res = lel
-    await res.edit(f"**Sedang Mencari Lagu** `{query}` **dari deezer**")
+    await res.edit(f"**Finding Song** `{query}` **from deezer**")
     try:
         songs = await arq.deezer(query,1)
         if not songs.ok:
@@ -939,12 +939,12 @@ async def deezer(client: Client, message_: Message):
         thumbnail = "https://telegra.ph/file/fa2cdb8a14a26950da711.png"
 
     except:
-        await res.edit("**Tidak Ditemukan Lagu Apa Pun!**")
+        await res.edit("**No Songs Found!**")
         return
     try:    
         duuration= round(duration / 60)
         if duuration > DURATION_LIMIT:
-            await cb.message.edit(f"**Musik lebih lama dari** `{DURATION_LIMIT}` **menit tidak diperbolehkan diputar**")
+            await cb.message.edit(f"**Song longer than** `{DURATION_LIMIT}` **minute(s) not allowed to play!**")
             return
     except:
         pass    
@@ -967,7 +967,7 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"🎼 **Lagu yang Anda minta Sedang Antri di posisi** `{position}`")
+        await res.edit_text(f"🎼 **The song you requested is Queuing in position** `{position}`")
     else:
         await res.edit_text(f"🎼️ **Playing...**")
 
@@ -981,7 +981,7 @@ async def deezer(client: Client, message_: Message):
         try:
             callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
-            res.edit("Voice Chat Group tidak aktif, Saya tidak dapat bergabung")
+            res.edit("VCG is not activated, I can't join")
             return
 
     await res.delete()
@@ -990,7 +990,7 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"🎼️ **Sedang Memutar Lagu** [{title}]({url}) **Via Deezer**",
+        caption=f"🎼️ **Playing a Song** [{title}]({url}) **Via Deezer**",
     )
     os.remove("final.png")
 
@@ -1010,7 +1010,7 @@ async def lol_cb(b, cb):
         return
     useer_id = int(useer_id)
     if cb.from_user.id != useer_id:
-        await cb.answer("Anda bukan orang yang meminta untuk memutar lagu!", show_alert=True)
+        await cb.answer("You are not allowed", show_alert=True)
         return
     await cb.message.edit("**Processing**")
     x=int(x)
@@ -1030,7 +1030,7 @@ async def lol_cb(b, cb):
     try:    
         duuration= round(duration / 60)
         if duuration > DURATION_LIMIT:
-            await cb.message.edit(f"Lagu lebih lama dari {DURATION_LIMIT} menit tidak diperbolehkan diputar")
+            await cb.message.edit(f"Song longer than {DURATION_LIMIT} minute(s) not allowed to play!")
             return
     except:
         pass
@@ -1069,8 +1069,8 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Antrian Ke `{position}`\n" \
-                    + f"🎧 **Request Dari:** {r_by.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Queue to `{position}`\n" \
+                    + f"🎧 **Requested by:** {r_by.mention}",
                    reply_markup=keyboard,
         )
         os.remove("final.png")
@@ -1091,8 +1091,8 @@ async def lol_cb(b, cb):
         await cb.message.delete()
         await b.send_photo(chat_id,
             photo="final.png",
-            caption = f"🏷 **Judul:** [{title[:30]}]({url})\n⏱ **Durasi:** {duration}\n💡 **Status:** Sedang Memutar\n" \
-                    + f"🎧 **Request Dari:** {r_by.mention}",
+            caption = f"🏷 **Title:** [{title[:30]}]({url})\n⏱ **Duration:** {duration}\n💡 **Stats:** Now Playing\n" \
+                    + f"🎧 **Requested by:** {r_by.mention}",
                     reply_markup=keyboard,
         )
         os.remove("final.png")
