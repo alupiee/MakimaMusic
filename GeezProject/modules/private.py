@@ -29,7 +29,7 @@ logging.basicConfig(level=logging.INFO)
 async def start_(client: Client, message: Message):
     await message.reply_text(
         f"""<b>Hello {message.from_user.first_name}\n
-I am [Makima](https://telegra.ph/file/e876e047815541a468d3b.jpg), I can play music in your Voice Chat Group easily
+I am [Makima](https://telegra.ph/file/ff75b44283e0200c4b8bd.jpg), I can play music in your Voice Chat Group easily
 ❃ Use Command » /help « to learn more how to use me.
 ❃ Managed By ❤ : {OWNER}
 
@@ -110,7 +110,7 @@ def map(pos):
 )
 async def start(client: Client, message: Message):
     await message.reply_text(
-        "💁🏻‍♂️ **Apakah Anda ingin mencari Link YouTube?**",
+        "💁🏻‍♂️ **Do you want to find YouTube links?**",
         reply_markup=InlineKeyboardMarkup(
             [   
                 [    
@@ -133,7 +133,7 @@ async def start(client: Client, message: Message):
 )
 async def help(client: Client, message: Message):
     await message.reply_text(
-        """**Klik Tombol dibawah untuk Melihat Cara Menggunakan Bot**""",
+        """**Click the button below to see how to use the bot**""",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
