@@ -20,20 +20,6 @@
 
 ## 🚀 Deployment
 
-### ⚔ Self-hosting (For Devs) 
-```sh
-# Install Git First (apt-instll git)
-$ git clone https://github.com/vckyou/Geez-MusicProject
-$ cd Geez-MusicProject
-# Upgrade sources
-# Install All Requirements 
-$ pip(3) install -r requirements.txt
-# Rename example.env to local.env and fill
-$ npm i -g npm
-# Start Bot 
-$ python(3) -m GeezProject
-```
-
 ### 💜 Heroku
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/alupiee/Makima-Music/tree/master)
