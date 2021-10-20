@@ -1,5 +1,5 @@
 {
-  "name": "Geez Music",
+  "name": "Makima Music",
   "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
   "keywords": ["music", "voicechat", "telegram"],
   "repository": "https://github.com/alupiee/Makima-Music",
@@ -30,17 +30,17 @@
     "SUPPORT_GROUP": {
       "description": "Grup dukungan MusicPlayer Anda Tanpa Menggunakan ==> @ <== [skip ini jika Anda tidak punya]",
       "required": false,
-      "value": "GeezSupportGroup"
+      "value": "Grup_Anime"
     },
     "UPDATES_CHANNEL": {
       "description": "Updates Channel @ [skip ini jika Anda tidak punya]",
       "required": false,
-      "value": "GeezProjects"
+      "value": "info_anime_indonesia_channel"
     }, 
     "PROJECT_NAME": {
       "description": "Nama proyek MusicPlayer Anda.",
       "required": false,
-      "value": "Geez Projects"
+      "value": "Makima Music Bot"
     },
     "ASSISTANT_NAME": {
       "description": "Username Telegram asisten Music Player Anda tanpa @.",
@@ -57,7 +57,7 @@
     "BG_IMAGE": {
       "description": "Custom Background Play Musik Gunakan Foto yang Transparant format .png / .jpg",
       "required": false,
-      "value": "https://telegra.ph/file/7de6a24af6cfc049a9316.png"
+      "value": "https://telegra.ph/file/8c4b5c3fb88171c2d6ef8.jpg"
     },        
     "API_ID": {
       "description": "Masukan APP ID Silahkan Ambil dari my.telegram.org/apps atau t.me/scrapmanbot",
